@@ -1,5 +1,5 @@
 import { allReaders, allBooks } from './data';
-import { Observable, of, from, concat, fromEvent } from 'rxjs';
+import { Observable, of, from, concat, fromEvent, timer, interval } from 'rxjs';
 
 /**
  *  Obseravale.create or new Obsrvable 
@@ -60,4 +60,20 @@ Observers vs Subscribers
     Observers - Receives the value
     Subscribers - Produce value from  Observables.
 */
+let cancelSubsBtn =  document.getElementById('cancelSubscriptionBtn');
+let source3$ = interval(1000);
+let timerSubscription = source3$.subscribe((event)=>console.log(event));
+fromEvent(cancelSubsBtn, 'click').subscribe((event) => {
+    timerSubscription.unsubscribe();
+})
 
+/*-------------------------------------------------**********Operators**************---------------------------------------------------------------------*/
+
+/**
+ * Pipe - Treeshaking
+ * Map
+ * Filter
+ * map
+ * Mergemap
+ * tap
+ */
