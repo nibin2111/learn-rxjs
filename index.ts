@@ -1,5 +1,6 @@
-import { allReaders, allBooks } from './data';
-import { Observable, of, from, concat, fromEvent, timer, interval } from 'rxjs';
+import { concat, from, fromEvent, interval, Observable, of } from 'rxjs';
+
+import { allBooks, allReaders } from './data';
 
 /**
  *  Obseravale.create or new Obsrvable 
@@ -76,4 +77,8 @@ fromEvent(cancelSubsBtn, 'click').subscribe((event) => {
  * map
  * Mergemap
  * tap
+ * catchError
+ * throwError
+ * take
+ * takeUntil
  */
